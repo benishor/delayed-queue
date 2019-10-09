@@ -3,6 +3,7 @@
 #include "Message.h"
 #include <vector>
 #include <queue>
+#include <mutex>
 
 class DelayedQueue {
 public:
@@ -12,5 +13,6 @@ public:
 
 private:
     std::priority_queue<Message> priorityQueue;
+    std::mutex queueMutex;
 };
 
